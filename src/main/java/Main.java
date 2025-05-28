@@ -1,28 +1,43 @@
 import Factories.SpanishFactory;
 import Factories.UsaFactory;
+import Addresses.AddressInputs;
 import Interficies.ContactBookFactory;
+import Interficies.PhoneNumber;
+import Interficies.Address;
+
 
 public class Main {
     public static void main(String[] args) {
-        ContactBookFactory spainFactory = new SpanishFactory();
-        PhoneBookAgenda phoneBookSpain = new PhoneBookAgenda(spainFactory);
 
-        phoneBookSpain.addContact(
-                new String[]{"Carrer Major 1", "Barcelona", "08001"},
-                "612345678"
-        );
-
+        ContactBookFactory spanishFactory = new SpanishFactory();
         ContactBookFactory usaFactory = new UsaFactory();
-        PhoneBookAgenda phoneBookUSA = new PhoneBookAgenda(usaFactory);
 
-        phoneBookUSA.addContact(
-                new String[]{"5th Avenue", "New York", "10001"},
-                "2125551234"
-        );
 
-        System.out.println("Spain Phone Book:");
-        phoneBookSpain.show();
+        PhoneBookAgenda spanishAgenda = new PhoneBookAgenda(spanishFactory);
+        PhoneBookAgenda usaAgenda = new PhoneBookAgenda(usaFactory);
+
+
+        AddressInputs spainInputs = new AddressInputs();
+        spainInputs.setStreet("Carrer Major 1");
+        spainInputs.setCity("Barcelona");
+        spainInputs.setProvince("Barcelona");
+        spainInputs.setZip("08001");
+
+        AddressInputs usaInputs = new AddressInputs();
+        usaInputs.setStreet("5th Avenue");
+        usaInputs.setCity("New York");
+        usaInputs.setState("NY");
+        usaInputs.setCountry("USA");
+
+
+        spanishAgenda.addContact(spainInputs, "612345678");
+        usaAgenda.addContact(usaInputs, "2125551234");
+
+
+        System.out.println("Spanish Phone Book:");
+        spanishAgenda.show();
+
         System.out.println("\nUSA Phone Book:");
-        phoneBookUSA.show();
+        usaAgenda.show();
     }
 }

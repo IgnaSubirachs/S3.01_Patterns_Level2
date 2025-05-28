@@ -1,11 +1,11 @@
-package Adresses;
+package Addresses;
 
 import Interficies.Address;
 
 public  class UsaAddress implements Address {
     private String street,city,zip;
 
-    public UsaAddress(String city, String street, String zip) {
+    public UsaAddress(String city, String street, String zip, String country) {
         this.city = city;
         this.street = street;
         this.zip = zip;

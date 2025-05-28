@@ -1,11 +1,11 @@
-package Adresses;
+package Addresses;
 
 import Interficies.Address;
 
-public class SpanishAdress implements Address {
+public class SpanishAddress implements Address {
     private String street,city, postalCode;
 
-    public SpanishAdress(String city, String postalCode, String street) {
+    public SpanishAddress(String city, String postalCode, String street, String zip) {
         this.city = city;
         this.postalCode = postalCode;
         this.street = street;

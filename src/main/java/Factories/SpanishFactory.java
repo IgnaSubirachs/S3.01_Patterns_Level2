@@ -1,17 +1,22 @@
 package Factories;
 
-import Adresses.SpanishAdress;
+import Addresses.SpanishAddress;
 import Interficies.Address;
 import Interficies.ContactBookFactory;
 import Interficies.PhoneNumber;
 import phone.SpanishPhone;
+import Addresses.AddressInputs;
+
 
 public class SpanishFactory implements ContactBookFactory {
-    public Address createAddress(String... data) {
-        return new SpanishAdress(data[0], data[1], data[2]);
+    public Address createAddress(AddressInputs addressInputs) {
+
+        return new SpanishAddress(addressInputs.getStreet(), addressInputs.getCity(), addressInputs.getProvince(),addressInputs.getZip());
     }
 
     public PhoneNumber createPhoneNumber(String number) {
+
         return new SpanishPhone(number);
+
     }
 }
