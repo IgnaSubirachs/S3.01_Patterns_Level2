@@ -2,25 +2,21 @@ package Addresses;
 
 import Interficies.Address;
 
+
 public class SpanishAddress implements Address {
-    private String street,city, postalCode;
+    private String street;
+    private String city;
+    private String province;
+    private String zip;
 
-    public SpanishAddress(String city, String postalCode, String street, String zip) {
-        this.city = city;
-        this.postalCode = postalCode;
+    public SpanishAddress(String street, String city, String province, String zip) {
         this.street = street;
+        this.city = city;
+        this.province = province;
+        this.zip = zip;
     }
-    @Override
+
     public String format() {
-        return street + ", " + postalCode + " " + city + ", Spain";
+        return street + ", " + zip + " " + city + " (" + province + "), Spain";
     }
-
-
-
-
-
-
 }
-
-
-

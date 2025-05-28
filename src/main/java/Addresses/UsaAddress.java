@@ -1,17 +1,22 @@
 package Addresses;
-
 import Interficies.Address;
 
-public  class UsaAddress implements Address {
-    private String street,city,zip;
 
-    public UsaAddress(String city, String street, String zip, String country) {
-        this.city = city;
+public class UsaAddress implements Address {
+    private String street;
+    private String city;
+    private String state;
+    private String country;
+
+    public UsaAddress(String street, String city, String state, String country) {
         this.street = street;
-        this.zip = zip;
+        this.city = city;
+        this.state = state;
+        this.country = country;
     }
+
     @Override
     public String format() {
-        return street + ", " + city + ", " + zip+" USA.";
+        return street + ", " + city + ", " + state + ", " + country;
     }
 }
