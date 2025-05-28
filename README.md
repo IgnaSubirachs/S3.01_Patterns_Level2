@@ -36,10 +36,10 @@ This project is a simple Java application that manages an agenda (phone book) wi
     javac *.java
     ```
 
-2. Run the `Main` class:
+2. Run the `APP.Main` class:
 
     ```bash
-    java Main
+    java APP.Main
     ```
 
 3. The output will display addresses and phone numbers for Spain and the USA, formatted according to each country's conventions.
